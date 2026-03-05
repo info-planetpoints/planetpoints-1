@@ -1,0 +1,41 @@
+.planet-points {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: 'Arial', sans-serif;
+  background-color: #f0f0f0;
+}
+
+.point {
+  background: #4CAF50;
+  color: white;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 10px;
+  transition: transform 0.2s;
+}
+
+.point:hover {
+  transform: scale(1.05);
+}
+
+.header {
+  text-align: center;
+  font-size: 2em;
+  color: #333;
+}
+
+.button {
+  background: #008CBA;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.button:hover {
+  background: #005f73;
+}
