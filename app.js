@@ -106,7 +106,7 @@
   }
 
   function initForms(){
-    const newsletter = document.querySelector('#newsletter form');
+    const newsletter = document.querySelector('#newsletterForm');
     if(newsletter){
       newsletter.addEventListener('submit', (e)=>{
         e.preventDefault();
@@ -137,6 +137,89 @@
     }
   }
 
+  function initCalculator(){
+    const form = $('#pointsForm');
+    const result = $('#result');
+    if(!form || !result) return;
+    form.addEventListener('submit', (e)=>{
+      e.preventDefault();
+      const recycling = parseFloat($('#recycling').value) || 0;
+      const walking = parseFloat($('#walking').value) || 0;
+      const planting = parseInt($('#planting').value) || 0;
+      const points = (recycling * 10) + (walking * 5) + (planting * 50);
+      result.textContent = `Možete zaraditi ${points} poena!`;
+    });
+  }
+
+  const quizData = [
+    {
+      question: "Koliko dugo traje prosečna plastična flaša u prirodi?",
+      answers: ["Nekoliko meseci", "Nekoliko godina", "Više od 400 godina", "Nikada se ne razgrađuje"],
+      correct: 2
+    },
+    {
+      question: "Koja zemlja proizvodi najviše otpada po glavi stanovnika?",
+      answers: ["Sjedinjene Države", "Kina", "Indija", "Brazil"],
+      correct: 0
+    },
+    {
+      question: "Koliki procenat svetske vode je slatka voda?",
+      answers: ["3%", "10%", "25%", "50%"],
+      correct: 0
+    }
+  ];
+
+  function initQuiz(){
+    let currentQuestion = 0;
+    let score = 0;
+    const questionEl = $('#question');
+    const answersEl = $('#answers');
+    const nextBtn = $('#nextBtn');
+    const resultEl = $('#quizResult');
+    if(!questionEl || !answersEl || !nextBtn || !resultEl) return;
+
+    function loadQuestion(){
+      const q = quizData[currentQuestion];
+      questionEl.textContent = q.question;
+      answersEl.innerHTML = '';
+      q.answers.forEach((answer, index) => {
+        const btn = document.createElement('button');
+        btn.className = 'answer-btn';
+        btn.textContent = answer;
+        btn.addEventListener('click', () => selectAnswer(index));
+        answersEl.appendChild(btn);
+      });
+      nextBtn.style.display = 'none';
+      resultEl.textContent = '';
+    }
+
+    function selectAnswer(index){
+      const q = quizData[currentQuestion];
+      const buttons = answersEl.querySelectorAll('.answer-btn');
+      buttons.forEach(btn => btn.disabled = true);
+      if(index === q.correct){
+        buttons[index].classList.add('correct');
+        score++;
+      } else {
+        buttons[index].classList.add('incorrect');
+        buttons[q.correct].classList.add('correct');
+      }
+      nextBtn.style.display = 'block';
+    }
+
+    nextBtn.addEventListener('click', () => {
+      currentQuestion++;
+      if(currentQuestion < quizData.length){
+        loadQuestion();
+      } else {
+        resultEl.textContent = `Kviz završen! Osvojili ste ${score}/${quizData.length} poena.`;
+        nextBtn.style.display = 'none';
+      }
+    });
+
+    loadQuestion();
+  }
+
   document.addEventListener('DOMContentLoaded', ()=>{
     initNav();
     setActiveLinks();
@@ -145,5 +228,7 @@
     fixLogo();
     registerSW();
     initForms();
+    initCalculator();
+    initQuiz();
   });
 })(); 

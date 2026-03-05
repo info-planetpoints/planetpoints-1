@@ -3,10 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PlanetPoints — Contact</title>
+  <title>PlanetPoints — Kontakt</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <link rel="manifest" href="manifest.json">
-  <meta name="theme-color" content="#004d99">
+  <meta name="theme-color" content="#2d5a27">
   <link rel="preload" as="image" href="planetpoints.png">
   <link rel="icon" href="planetpoints.png" type="image/png">
   <link rel="shortcut icon" href="planetpoints.png" type="image/png">
@@ -14,29 +17,34 @@
 </head>
 <body>
   <header class="header">
-    <div class="container brand">
-      <img src="planetpoints.png?v=20260305" alt="PlanetPoints" id="logo" />
-      <h1>PlanetPoints</h1>
-      <button class="theme-toggle" id="themeToggle" aria-label="Promijeni temu">Tema</button>
-      <button class="hamburger" aria-label="Meni" aria-expanded="false" aria-controls="primary-nav">
-        <span></span><span></span><span></span>
-      </button>
+    <div class="container">
+      <div class="brand">
+        <img src="planetpoints.png?v=20260305" alt="PlanetPoints" id="logo" />
+        <h1>PlanetPoints</h1>
+      </div>
+      <nav class="nav" id="primary-nav">
+        <ul>
+          <li><a href="index.html">Početna</a></li>
+          <li><a href="features.html">Funkcije</a></li>
+          <li><a href="gallery.html">Galerija</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="faq.html">Najčešća pitanja</a></li>
+          <li><a href="contact.html">Kontakt</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Promijeni temu">Tema</button>
+        <button class="hamburger" aria-label="Meni" aria-expanded="false" aria-controls="primary-nav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
-    <nav class="nav" id="primary-nav">
-      <ul>
-        <li><a href="index.html">Početna</a></li>
-        <li><a href="features.html">Funkcije</a></li>
-        <li><a href="gallery.html">Galerija</a></li>
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="faq.html">Najčešća pitanja</a></li>
-        <li><a href="contact.html" class="active">Kontakt</a></li>
-      </ul>
-    </nav>
   </header>
 
   <main class="section">
     <div class="container form-container">
       <h2>Kontaktiraj nas</h2>
+      <p>Imate pitanja? Pišite nam!</p>
       <p>Email: <a href="mailto:info.planetpoints@gmail.com">info.planetpoints@gmail.com</a></p>
       <form>
         <input type="text" name="name" placeholder="Ime i prezime" required>

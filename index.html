@@ -4,9 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PlanetPoints</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <link rel="manifest" href="manifest.json">
-  <meta name="theme-color" content="#004d99">
+  <meta name="theme-color" content="#2d5a27">
   <link rel="preload" as="image" href="planetpoints.png">
   <link rel="icon" href="planetpoints.png" type="image/png">
   <link rel="shortcut icon" href="planetpoints.png" type="image/png">
@@ -15,49 +18,97 @@
 </head>
 <body>
   <header class="header">
-    <div class="container brand">
-      <img src="planetpoints.png?v=20260305" alt="PlanetPoints" id="logo" />
-      <h1>PlanetPoints</h1>
-      <button class="theme-toggle" id="themeToggle" aria-label="Promijeni temu">Tema</button>
-      <button class="hamburger" aria-label="Meni" aria-expanded="false" aria-controls="primary-nav">
-        <span></span><span></span><span></span>
-      </button>
+    <div class="container">
+      <div class="brand">
+        <img src="planetpoints.png?v=20260305" alt="PlanetPoints" id="logo" />
+        <h1>PlanetPoints</h1>
+      </div>
+      <nav class="nav" id="primary-nav">
+        <ul>
+          <li><a href="index.html">Početna</a></li>
+          <li><a href="features.html">Funkcije</a></li>
+          <li><a href="gallery.html">Galerija</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="faq.html">Najčešća pitanja</a></li>
+          <li><a href="contact.html">Kontakt</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Promijeni temu">Tema</button>
+        <button class="hamburger" aria-label="Meni" aria-expanded="false" aria-controls="primary-nav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
-    <nav class="nav" id="primary-nav">
-      <ul>
-        <li><a href="index.html">Početna</a></li>
-        <li><a href="features.html">Funkcije</a></li>
-        <li><a href="gallery.html">Galerija</a></li>
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="faq.html">Najčešća pitanja</a></li>
-        <li><a href="contact.html">Kontakt</a></li>
-      </ul>
-    </nav>
   </header>
 
   <main>
     <section class="hero">
       <div class="container">
         <h1>Skupljaj poene. Nagrađuj planetu.</h1>
-        <p>PlanetPoints motiviše ekološke navike kroz poene, izazove i lokalne nagrade.</p>
-        <a href="features.html" class="btn btn-primary">Saznaj više</a>
+        <p>PlanetPoints motiviše ekološke navike kroz poene, izazove i lokalne nagrade. Pridruži se revoluciji zelenih akcija!</p>
+        <a href="#calculator" class="btn btn-primary">Izračunaj poene</a>
+        <a href="#quiz" class="btn btn-secondary">Igraj kviz</a>
       </div>
     </section>
+
     <section id="quicklinks" class="section">
       <div class="container">
+        <h2>Istraži PlanetPoints</h2>
         <div class="cards">
           <a class="card" href="features.html">
+            <div class="card-icon">🌟</div>
             <h3>Funkcije</h3>
             <p>Poeni, izazovi, mape i nagrade.</p>
           </a>
           <a class="card" href="blog.html">
+            <div class="card-icon">📝</div>
             <h3>Blog</h3>
             <p>Novosti i savjeti iz zajednice.</p>
           </a>
           <a class="card" href="faq.html">
+            <div class="card-icon">❓</div>
             <h3>Najčešća pitanja</h3>
             <p>Brzi odgovori na tvoja pitanja.</p>
           </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="calculator" class="section">
+      <div class="container">
+        <h2>Kalkulator poena</h2>
+        <p>Izračunaj koliko poena možeš zaraditi svojim ekološkim akcijama.</p>
+        <div class="calculator">
+          <form id="pointsForm">
+            <div class="form-group">
+              <label for="recycling">Recikliranje (kg):</label>
+              <input type="number" id="recycling" min="0" step="0.1">
+            </div>
+            <div class="form-group">
+              <label for="walking">Pješačenje (km):</label>
+              <input type="number" id="walking" min="0" step="0.1">
+            </div>
+            <div class="form-group">
+              <label for="planting">Sadnja stabala:</label>
+              <input type="number" id="planting" min="0">
+            </div>
+            <button type="submit" class="btn btn-primary">Izračunaj</button>
+          </form>
+          <div id="result" class="result"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="quiz" class="section">
+      <div class="container">
+        <h2>Eko Kviz</h2>
+        <p>Testiraj svoje znanje o životnoj sredini i zaradi dodatne poene!</p>
+        <div class="quiz">
+          <div id="question"></div>
+          <div id="answers"></div>
+          <button id="nextBtn" class="btn btn-primary" style="display:none;">Sledeće pitanje</button>
+          <div id="quizResult"></div>
         </div>
       </div>
     </section>
@@ -66,20 +117,27 @@
       <div class="container">
         <h2>Ključne funkcije</h2>
         <p>Praćenje aktivnosti, nedeljni izazovi i tabela zajednice.</p>
-      </div>
-    </section>
-
-    <section id="gallery" class="section">
-      <div class="container">
-        <h2>Galerija</h2>
-        <p>Trenutno nema slika. Uskoro ćemo dodati sadržaj.</p>
+        <div class="features-grid">
+          <div class="feature">
+            <h3>🎯 Izazovi</h3>
+            <p>Kompletiraj nedeljne izazove za bonus poene.</p>
+          </div>
+          <div class="feature">
+            <h3>🗺️ Mape</h3>
+            <p>Pronađi lokalne nagrade i događaje.</p>
+          </div>
+          <div class="feature">
+            <h3>🏆 Rang lista</h3>
+            <p>Takmiči se sa prijateljima u zajednici.</p>
+          </div>
+        </div>
       </div>
     </section>
 
     <section id="newsletter" class="section">
       <div class="container form-container">
         <h2>Prijavi se na newsletter</h2>
-        <form>
+        <form id="newsletterForm">
           <input type="email" placeholder="Unesite svoj email" required>
           <button type="submit" class="btn btn-primary">Pretplati se</button>
         </form>
