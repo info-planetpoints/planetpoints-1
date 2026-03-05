@@ -5,25 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PlanetPoints</title>
   <link rel="stylesheet" href="styles.css">
-  <link rel="icon" href="logo.png" type="image/png">
-  <link rel="icon" href="logo.svg" type="image/svg+xml">
+  <link rel="icon" href="planetpoints.png" type="image/png">
   <meta name="description" content="PlanetPoints — gamified ekološki bodovi i nagrade.">
 </head>
 <body>
   <header class="header">
     <div class="container brand">
-      <picture>
-        <source srcset="logo.png" type="image/png">
-        <img src="logo.svg" alt="PlanetPoints" id="logo" />
-      </picture>
+      <img src="planetpoints.png" alt="PlanetPoints" id="logo" />
       <h1>PlanetPoints</h1>
+      <button class="hamburger" aria-label="Meni" aria-expanded="false" aria-controls="primary-nav">
+        <span></span><span></span><span></span>
+      </button>
     </div>
-    <nav class="nav">
+    <nav class="nav" id="primary-nav">
       <ul>
-        <li><a href="home.html">Home</a></li>
-        <li><a href="features.html">Features</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="index.html">Početna</a></li>
+        <li><a href="features.html">Funkcije</a></li>
+        <li><a href="gallery.html">Galerija</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="faq.html">Najčešća pitanja</a></li>
+        <li><a href="contact.html">Kontakt</a></li>
       </ul>
     </nav>
   </header>
@@ -32,7 +33,7 @@
     <section class="hero">
       <div class="container">
         <h1>Skupljaj poene. Nagrađuj planetu.</h1>
-        <p>PlanetPoints je jednostavan način da motivišemo ekološke navike kroz poene, izazove i lokalne nagrade.</p>
+        <p>PlanetPoints motiviše ekološke navike kroz poene, izazove i lokalne nagrade.</p>
         <a href="features.html" class="btn btn-primary">Saznaj više</a>
       </div>
     </section>
@@ -40,14 +41,14 @@
     <section id="features" class="section">
       <div class="container">
         <h2>Ključne funkcije</h2>
-        <p>Praćenje aktivnosti, tjedni izazovi i leaderboard zajednice.</p>
+        <p>Praćenje aktivnosti, nedeljni izazovi i tabela zajednice.</p>
       </div>
     </section>
 
     <section id="gallery" class="section">
       <div class="container">
         <h2>Galerija</h2>
-        <p>Pogledaj kako korisnici doprinose zajednici.</p>
+        <p>Trenutno nema slika. Uskoro ćemo dodati sadržaj.</p>
       </div>
     </section>
 
@@ -55,7 +56,7 @@
       <div class="container form-container">
         <h2>Prijavi se na newsletter</h2>
         <form>
-          <input type="email" placeholder="Unesi svoj email" required>
+          <input type="email" placeholder="Unesite svoj email" required>
           <button type="submit" class="btn btn-primary">Pretplati se</button>
         </form>
         <div style="margin-top:12px">
@@ -66,9 +67,25 @@
   </main>
 
   <footer class="footer">
-    <div class="container">
+    <div class="container footer-grid">
       <p>&copy; 2026 PlanetPoints. Sva prava zadržana.</p>
+      <div class="footer-links">
+        <a href="onama.html">O nama</a>
+        <a href="partneri.html">Partneri</a>
+        <a href="blog.html">Blog</a>
+        <a href="faq.html">Najčešća</a>
+        <a href="privatnost.html">Privatnost</a>
+        <a href="uslovi.html">Uslovi</a>
+        <a href="https://www.instagram.com/planetpoints/" target="_blank" rel="noopener">
+          <svg class="icon-ig" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill="#fff" d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3.5a5.5 5.5 0 1 1 0 11 5.5 5.5 0 0 1 0-11zm0 2a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7zM18 6.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3z"/>
+          </svg>
+        </a>
+      </div>
     </div>
   </footer>
+  <script>
+    const hb=document.querySelector('.hamburger');const nav=document.getElementById('primary-nav');if(hb&&nav){hb.addEventListener('click',function(){const o=nav.classList.toggle('open');this.setAttribute('aria-expanded',o);});}
+  </script>
 </body>
 </html>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PlanetPoints — Gallery</title>
+  <title>PlanetPoints — Contact</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" href="planetpoints.png" type="image/png">
 </head>
@@ -20,18 +20,25 @@
       <ul>
         <li><a href="index.html">Početna</a></li>
         <li><a href="features.html">Funkcije</a></li>
-        <li><a href="gallery.html" class="active">Galerija</a></li>
+        <li><a href="gallery.html">Galerija</a></li>
         <li><a href="blog.html">Blog</a></li>
         <li><a href="faq.html">Najčešća pitanja</a></li>
-        <li><a href="contact.html">Kontakt</a></li>
+        <li><a href="contact.html" class="active">Kontakt</a></li>
       </ul>
     </nav>
   </header>
 
   <main class="section">
-    <div class="container">
-      <h2>Galerija zajednice</h2>
-      <p>Trenutno nema slika. Uskoro ćemo dodati sadržaj.</p>
+    <div class="container form-container">
+      <h2>Kontaktiraj nas</h2>
+      <p>Email: <a href="mailto:info.planetpoints@gmail.com">info.planetpoints@gmail.com</a></p>
+      <form>
+        <input type="text" name="name" placeholder="Ime i prezime" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <textarea name="message" rows="5" placeholder="Poruka" required></textarea>
+        <button type="submit" class="btn btn-primary">Pošalji</button>
+      </form>
+      <p style="margin-top:10px; font-size: 0.9rem;">Slanjem obrasca pristaješ na obradu podataka u svrhu odgovora.</p>
     </div>
   </main>
 
