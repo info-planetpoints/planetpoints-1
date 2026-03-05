@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PlanetPoints — Partneri</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#004d99">
+  <link rel="preload" as="image" href="planetpoints.png">
   <link rel="icon" href="planetpoints.png" type="image/png">
   <link rel="shortcut icon" href="planetpoints.png" type="image/png">
   <link rel="apple-touch-icon" href="planetpoints.png">
@@ -12,8 +15,9 @@
 <body>
   <header class="header">
     <div class="container brand">
-      <img src="planetpoints.png" alt="PlanetPoints" id="logo" />
+      <img src="planetpoints.png?v=20260305" alt="PlanetPoints" id="logo" />
       <h1>PlanetPoints</h1>
+      <button class="theme-toggle" id="themeToggle" aria-label="Promijeni temu">Tema</button>
       <button class="hamburger" aria-label="Meni" aria-expanded="false" aria-controls="primary-nav">
         <span></span><span></span><span></span>
       </button>
@@ -55,8 +59,6 @@
       </div>
     </div>
   </footer>
-  <script>
-    const hb=document.querySelector('.hamburger');const nav=document.getElementById('primary-nav');if(hb&&nav){hb.addEventListener('click',function(){const o=nav.classList.toggle('open');this.setAttribute('aria-expanded',o);});}
-  </script>
+  <script src="app.js"></script>
 </body>
 </html>
