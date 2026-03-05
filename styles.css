@@ -176,40 +176,14 @@ body {
 }
 
 @media (max-width: 768px) {
-  .hero .container {
-    flex-direction: column;
-    text-align: center;
+  .coming-soon .logo {
+    width: 150px;
   }
-  .hero-content {
-    text-align: center;
-  }
-  .hero-title {
-    font-size: 2.5rem;
-  }
-  .hero-subtitle {
-    font-size: 1.1rem;
-  }
-  .hero-buttons {
-    justify-content: center;
-  }
-  .stats {
-    flex-direction: column;
-  }
-  .steps {
-    flex-direction: column;
-  }
-  .features-grid, .testimonials-grid {
-    grid-template-columns: 1fr;
-  }
-  .download-buttons {
-    flex-direction: column;
-    align-items: center;
-  }
-  .section {
-    padding: 40px 0;
-  }
-  .section h2 {
+  .coming-soon h1 {
     font-size: 2rem;
+  }
+  .coming-soon p {
+    font-size: 1rem;
   }
 }
 
@@ -309,28 +283,39 @@ body {
   color: #fff;
 }
 
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.coming-soon {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(135deg, var(--primary), var(--primary-2));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  z-index: 1000;
 }
 
-.section {
-  padding: 80px 0;
-  animation: fadeInUp 0.8s ease-out;
+.coming-soon .logo {
+  width: 200px;
+  height: auto;
+  margin-bottom: 30px;
 }
 
-.section:nth-child(even) {
-  background: #f9f9f9;
+.coming-soon h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
 }
 
-.section:nth-child(odd) {
-  background: var(--bg);
+.coming-soon p {
+  font-size: 1.2rem;
+  margin-bottom: 0;
+  opacity: 0.9;
 }
 
 .header {
