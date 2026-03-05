@@ -1,114 +1,48 @@
 <!DOCTYPE html>
-<html lang="hr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PlanetPoints - Dolazi uskoro!</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-
-        .container {
-            text-align: center;
-            background-color: #fff;
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        h1 {
-            color: #333;
-        }
-
-        #countdown {
-            font-size: 2em;
-            margin-top: 20px;
-        }
-
-        .logo-container {
-            margin-top: 30px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 20px;
-        }
-
-        .logo {
-            width: 100px; /* Adjust size as needed */
-            height: auto;
-        }
-
-        .instagram-link {
-            text-decoration: none;
-            color: #333;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .instagram-icon {
-            width: 30px; /* Adjust size as needed */
-            height: auto;
-        }
-
-        .interesting-element {
-            margin-top: 40px;
-            font-size: 1.1em;
-            color: #555;
-        }
-    </style>
+    <title>Info Planet Points</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1>PlanetPoints dolazi uskoro!</h1>
-        <div id="countdown"></div>
+    <header>
+        <img src="logo.png" alt="Logo" id="logo">
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="features.html">Features</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
 
-        <div class="logo-container">
-            <img src="https://media.discordapp.net/attachments/1452309541026005163/1478760242362847343/planetpointslogo.png?ex=69a9924b&is=69a840cb&hm=b51889a77cbf9308497c5bf1d27efc5f406bc331d8ad2dfbb3b811c5a1575193&=&format=webp&quality=lossless" alt="PlanetPoints Logo" class="logo">
-            <a href="https://www.instagram.com/planetpoints2026/" target="_blank" class="instagram-link">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" alt="Instagram Logo" class="instagram-icon">
-                <span>Pratite nas na Instagramu</span>
-            </a>
-        </div>
+    <main>
+        <section id="features">
+            <h2>Features</h2>
+            <p>Explore the amazing features we offer...</p>
+        </section>
 
-        <div class="interesting-element">
-            <p>PlanetPoints je više od aplikacije. To je pokret za očuvanje naše planete!</p>
-            <p>Zarađujte poene za ekološki odgovorno ponašanje, istražujte nove načine zaštite životne sredine u vašoj zajednici i iskoristite nagrade kod partnera koji podržavaju održivost.</p>
-        </div>
-    </div>
+        <section id="gallery">
+            <h2>Gallery</h2>
+            <p>Check out our collection...</p>
+        </section>
 
-    <script>
-        // Set the countdown date to 30 days from now
-        const countdownDate = new Date();
-        countdownDate.setDate(countdownDate.getDate() + 30);
+        <section id="newsletter">
+            <h2>Sign Up for Our Newsletter</h2>
+            <form>
+                <input type="email" placeholder="Enter your email" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </section>
 
-        // Update the countdown every 1 second
-        const x = setInterval(function() {
-            const now = new Date().getTime();
-            const distance = countdownDate - now;
+        <button disabled id="downloadBtn">Download</button>
+    </main>
 
-            // Calculate days, hours, minutes, and seconds
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-            // Output the results in the element with id="countdown"
-            document.getElementById("countdown").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s";
-
-            // If the countdown is finished, write some text
-            if (distance < 0) {
-                clearInterval(x);
-                document.getElementById("countdown").innerHTML = "PlanetPoints je tu!";
-            }
-        }, 1000);
-    </script>
+    <footer>
+        <p>&copy; 2026 Info Planet Points. All rights reserved.</p>
+    </footer>
 </body>
 </html>
