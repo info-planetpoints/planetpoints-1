@@ -1,14 +1,11 @@
-name = "planetpoints-worker"
+name = "planetpoints-pages"
 type = "javascript"
 account_id = "<YOUR_ACCOUNT_ID>"
 workers_dev = true
 route = ""
 zone_id = ""
 
-[site]
-  bucket = "./public"
-  entry-point = "workers-site"
-
-[build]
-  command = ""
+# For Cloudflare Pages use:
+# wrangler pages deploy public --project-name planetpoints-1 --branch main
+# This file is kept for compatibility with Wrangler environment.
 

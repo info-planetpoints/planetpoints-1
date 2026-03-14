@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "wrangler dev",
-    "deploy": "wrangler publish"
+    "dev": "wrangler pages dev public --live",
+    "build": "echo 'Static site is in public/; no build required'",
+    "deploy": "wrangler pages deploy public --project-name planetpoints-1 --branch main"
   },
   "devDependencies": {
     "wrangler": "^3.0.0"
