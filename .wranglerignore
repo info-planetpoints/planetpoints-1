@@ -6,6 +6,8 @@ node_modules/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+**/workerd**
+**/workerd/**
 *.psd
 *.mov
 *.mp4
